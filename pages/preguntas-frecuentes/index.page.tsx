@@ -11,6 +11,7 @@ import { Faq } from "types/index";
 import BodySingle from "dh-marvel/components/layouts/body/single/body-single";
 import Head from "next/head";
 import { getFaqs } from "dh-marvel/services/faqs";
+import { faqsData } from "dh-marvel/components/faqs/faqsData";
 
 interface Props {
     faqs: Faq[];
@@ -35,7 +36,7 @@ const StyledAccordionDetails = styled(AccordionDetails)({
     padding: "15px 30px",
 });
 
-const FaqsPage: NextPage<Props> = ({ faqs }) => {
+const FaqsPage: NextPage<Props> = () => {
     return (
         <>
             <Head>
@@ -47,7 +48,7 @@ const FaqsPage: NextPage<Props> = ({ faqs }) => {
                 <link rel="icon" href="/public/favicon.ico" />
             </Head>
             <BodySingle title={"Preguntas Frecuentes"}>
-                {faqs.map((faq) => (
+                {faqsData.map((faq) => (
                     <StyledAccordion key={faq.id}>
                         <StyledAccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -66,7 +67,7 @@ const FaqsPage: NextPage<Props> = ({ faqs }) => {
     );
 };
 
-export const getStaticProps = async () => {
+/* export const getStaticProps = async () => {
     const faqs = await getFaqs();
     return {
         props: {
@@ -74,5 +75,5 @@ export const getStaticProps = async () => {
         },
     };
 };
-
+ */
 export default FaqsPage;
