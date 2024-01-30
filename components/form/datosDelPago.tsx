@@ -5,7 +5,6 @@ import { ErrorMessage } from '@hookform/error-message';
 import { CustomTextField } from './Inputs/CustomTextField';
 import { useFormContext } from 'react-hook-form';
 import FormGroup from '@mui/material/FormGroup';
-import { IDatosDelPago } from 'types/form';
 
 export default function DatosDelPago() {
     const { control, formState: { errors }, trigger } = useFormContext();

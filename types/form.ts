@@ -1,53 +1,31 @@
-export interface DataForm{
-    datosPersonales: DatosPersonales
-    datosDelPago: IDatosDelPago
-    order: Order
-}
-export interface DatosForm{
-    datos:{
-        datosForm: any
-        order: any
-    }
-    setModal:(modal: any) => void;
+export interface PersonalData {
+    customer: Customer;
+    card:     Card;
 }
 
-export interface DatosPersonales{
-    name: string
-    lastName: string
-    email: string
-    address: DireccionEntrega
+export interface Card {
+    number:     string;
+    cvc:        string;
+    expDate:    string;
+    nameOnCard: string;
 }
 
-// export interface DataForm{
-//     datosPersonales: DatosPersonales
-//     direccionEntrega:DireccionEntrega
-//     datosDelPago: DatosDelPago
-// }
-
-export interface PersonalData{
-    name: string
-    lastName: string
-    email: string
+export interface Customer {
+    name:     string;
+    lastname: string;
+    email:    string;
+    address:  Address;
 }
 
-export interface DireccionEntrega{
-    address1: string
-    address2: string | null
-    city: string
-    state: string
-    zipCode: string
+export interface Address {
+    address1: string;
+    address2: string;
+    city:     string;
+    state:    string;
+    zipCode:  string;
 }
-
-export interface IDatosDelPago{
-    number: string
-    cvc: string
-    expDate: string
-    nameOnCard: string
-    focus?: string
-}
-
 export interface Order{
-    name: string,
-    image: string,
-    price: number
+    name:   string,
+    image:  string,
+    price:  number
 }
